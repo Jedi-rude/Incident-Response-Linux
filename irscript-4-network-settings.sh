@@ -1,0 +1,32 @@
+#!/bin/bash
+#outputfile
+output_file="Incident_Report_Network_Settings_$(date +%Y-%m-%d-%H-%M-%S).txt"
+echo "Report Time - $(date +%Y-%m-%d-%H-%M-%S)"
+
+#List of Network Settings
+echo "====================== Network Settings Report =====================" >> "$output_file"
+echo " " >> "$output_file"
+echo "============= All Network Interfaces ============" >> "$output_file"
+ifconfig -a >> "$output_file"
+echo "" >> "$output_file"
+echo "============= DNS Information ============" >> "$output_file"
+more /etc/resolv.conf >> "$output_file"
+echo ""
+echo "============= Hosts File Information ============" >> "$output_file"
+more /etc/hosts >> "$output_file"
+echo ""
+echo "============= Active Network Connections ============" >> "$output_file"
+netstat -antup >> "$output_file"
+echo "" >> "$output_file"
+echo "============= Show All Iptables Rules ============" >> "$output_file"
+iptables -L -n -v >> "$output_file"
+echo "" >> "$output_file"
+echo "============= Show Routing Table ============" >> "$output_file"
+route -n >> "$output_file"
+echo ""
+echo "============= Listening Ports & Connections ============" >> "$output_file"
+ss -tuln >> "$output_file"
+echo ""
+echo "====================== Network Settings Report =====================" >> "$output_file"
+
+echo "Network Settings Incident Report is saved to $output_file"
