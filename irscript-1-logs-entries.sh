@@ -1,6 +1,7 @@
 #!/bin/bash
 #resultfile
 output_file="Incident_Report_Logs_Entries_$(date +%Y-%m-%d-%H-%M-%S).txt"
+echo "Date & Time of Report - $(date +%Y-%m-%d-%H-%M-%S)"
 
 #List of Log Entries
 echo "====================== Logs Entries =====================" >> "$output_file"
