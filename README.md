@@ -1,6 +1,6 @@
 # Incident-Response-Linux
 Linux Incident Management Scripts
-This repository contains basic Incident Response Investigation scripts. This scripts are mainly runs on Bash shell. Theses scripts are only tested on Debian based distros.
+This repository contains basic Incident Response Investigation scripts. This scripts are mainly runs on Bash shell. These scripts are only tested on Debian based distros.
 
 ## Table of Content
 - [Users Management Commands](#users-managemen)
