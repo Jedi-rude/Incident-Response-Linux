@@ -67,6 +67,21 @@ commands for logs entries
 - `cat /var/log/kern.log` - kernel logs
 - `cat /var/log/syslog` - Syslogs messages
 
+###  System Security Status script
+This script performs a series of checks to ensure the system is secure and compliant with security best practices. It checks for:
+- Firewall configuration
+- System updates and patches
+- SSH configuration
+- SELinux configuration
+- System logs
+- Network configuration
+- System users and groups
+- File system permissions
+
+`sys-sec.sh` -script name
+
+Note that this script is just a starting point and may need to be modified to fit the specific needs of your system and security requirements.
+
 ## Running the Scripts
 make sure the required permissions for this script is given & add execution permissions for this script. Do following steps after downloading the scripts.
 ```
