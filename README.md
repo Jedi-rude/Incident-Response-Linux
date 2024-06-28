@@ -12,20 +12,28 @@ This repository contains basic Incident Response Investigation scripts. This scr
 ### Users Managements
 commands for investigating linux users activities, permissions and information.
 - `cat /etc/passwd ` - List of Users Accounts
+- `/etc/bash.bashrc` - user profile setting
+- `/etc/profile` - also user profile
 - `egrep -e '/bin/(ba)?sh' /etc/passwd` - Lists of users who have shell access
 - `cat /etc/group` - List of User Groups
 - `cat /etc/sudoers` - Sudoers Accounts
 - `lastlog` - Most Recent Logins
+- `last -f /var/log/wtmp` - failed logins
 - `last` - Last Login Users
 - `who` - Current Login Users
 - `w` - Currently Logged in Users & Activities
-- `sudo -l` - Displays list of permitted commands 
+- `sudo -l` - Displays list of permitted commands
+- `cat ~/.bash_history ` - Bash history information
+- `cat ~/.viminfo` - Information about who accessed vim
 
 ### Network Settings Management Commands
 commands to see netwrok configurations 
 - `ifconfig -a` - All Network Interfaces
+- `cat /etc/network/interfaces` - Netwrok interfaces
+- `cat /etc/hostname` - Check the system hostname
+- `cat /etc/timezone` - Check the timezone of the system
 - `more /etc/resolv.conf` - DNS Information
-- `more /etc/hosts` - Hosts File Information
+- `more /etc/hosts` - DNS Information
 - `netstat -antup` - Active Network Connections
 - `iptables -L -n -v ` - Show All Iptables Rules
 - `route -n` - Show Routing Table in numeric form
@@ -51,6 +59,7 @@ commands for linux system processes & services
 - `pstree -p` - Process Tree with PIDs
 - `ps -axjf` - Show Running Processes in a Tree-like Format
 - `top -n 1` - Top Processes
+- `ls /etc/init.d` - startup process
 - `service --status-all` - List of all services
 - `chkconfig --list` - List of all services & current state
 - `systemctl list-units --type=service` - List of running services
@@ -62,10 +71,11 @@ commands for linux system processes & services
 commands for logs entries
 - `cat /var/log/messages` - System Messages Logs
 - `cat /var/log/auth.log` - Users Authentication Logs
+- `cat /var/log/auth.log* | grep -i COMMAND` - sudo command execution
 - `cat /var/log/boot.log` - System Boot Logs
 - `cat /var/log/dmesg` - Kernel Ring Buffer Logs
 - `cat /var/log/kern.log` - kernel logs
-- `cat /var/log/syslog` - Syslogs messages
+- `/var/log/syslog` - Syslogs messages
 
 ###  System Security Status script
 This script performs a series of checks to ensure the system is secure and compliant with security best practices. It checks for:
